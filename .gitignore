@@ -1,0 +1,10 @@
+.dart_tool/
+.packages
+build/
+*.iml
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+pubspec.lock
