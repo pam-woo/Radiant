@@ -10,3 +10,11 @@ build/
 pubspec.lock
 
 env.json
+
+# detector outputs and large files
+detector/runs/
+detector/datasets/
+detector/__pycache__/
+*.pt
+*.mp4
+detector/detections*.jsonl

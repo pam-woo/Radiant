@@ -42,10 +42,22 @@ class SimulationConfig {
   final double emergencySpeedMetersPerSecond;
 }
 
+/// Anything that can produce one frame per second for an intersection: the
+/// random simulator, or a replay of real detections.
+abstract class IntersectionSource {
+  int get id;
+  String get name;
+  int get vehiclesToday;
+  int get emergencyAlertsToday;
+  set emergencyAlertsToday(int value);
+
+  IntersectionFrame step(DateTime now);
+}
+
 /// Simulates the camera and vehicle classifier for one intersection and feeds
 /// the result to a [TrafficAgent]. The agent only ever sees a [Percept], so a
 /// real detector could replace this class later.
-class IntersectionSimulator {
+class IntersectionSimulator implements IntersectionSource {
   IntersectionSimulator({
     required this.id,
     required this.name,
@@ -187,14 +199,14 @@ class TrafficSimulator {
   TrafficSimulator({
     int seed = 42,
     DateTime? start,
-    List<IntersectionSimulator>? intersections,
+    List<IntersectionSource>? intersections,
     this.maxEvents = 500,
     double emergencyBoost = 1.0,
   })  : _time = start ?? DateTime.utc(2026, 10, 19, 8),
         intersections = intersections ??
             defaultIntersections(seed, emergencyBoost: emergencyBoost);
 
-  final List<IntersectionSimulator> intersections;
+  final List<IntersectionSource> intersections;
   final int maxEvents;
 
   DateTime _time;
@@ -263,6 +275,9 @@ class TrafficSimulator {
           name: 'Intersection ${(i + 1).toString().padLeft(2, '0')}',
           profile: profiles[i],
           seed: seed,
+          // Wait a while before calling a road empty, so busy intersections
+          // do not flip in and out of idle mode.
+          agentConfig: const AgentConfig(idleAfterEmptySeconds: 20),
         ),
     ];
   }

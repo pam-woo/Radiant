@@ -25,7 +25,7 @@ void main() {
     for (var i = 1; i <= 300; i++) {
       final frame =
           sim.tick().firstWhere((f) => f.intersectionId == 4);
-      if (i >= 6) {
+      if (i >= 25) {
         expect(frame.mode, IntersectionMode.idle, reason: 'tick $i');
       }
     }

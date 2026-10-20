@@ -60,6 +60,7 @@ Future<void> main(List<String> args) async {
       id: replayId,
       name: sources[index].name,
       frames: frames,
+      agentConfig: const AgentConfig(idleAfterEmptySeconds: 20),
     );
     stdout.writeln(
       'Intersection $replayId replays ${frames.length} s of detections '
@@ -136,7 +137,8 @@ Future<void> main(List<String> args) async {
       await db.upsert('intersection_live', liveRows(frames, now),
           onConflict: 'intersection_id');
 
-      await db.insert('events', eventRows(frames));
+      // Tick 0 only reports changes that happened during the warm-up.
+      if (tick > 0) await db.insert('events', eventRows(frames));
 
       await db.upsert('active_emergencies', emergencyRows(frames, now),
           onConflict: 'intersection_id');
@@ -153,6 +155,7 @@ Future<void> main(List<String> args) async {
       activeEmergencies = current;
 
       for (final f in frames) {
+        if (tick == 0) break;
         for (final e in f.events) {
           stdout.writeln(
               '${f.name}: [${e.type.label}] ${e.laneLabel}: ${e.description}');
