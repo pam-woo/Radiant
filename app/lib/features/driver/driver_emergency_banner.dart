@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../data/radiant_repository.dart';
+import '../../state/settings_state.dart';
 import '../../theme.dart';
 import 'emergency_alert_screen.dart';
 
@@ -18,7 +19,11 @@ class DriverEmergencyBanner extends StatelessWidget {
       builder: (context, _) {
         final alert = repo.nearestEmergency;
         // Stale data could show an alert that is long over, so hide it.
-        if (alert == null || repo.offline) return const SizedBox.shrink();
+        if (alert == null ||
+            repo.offline ||
+            !SettingsScope.of(context).alertsEnabled) {
+          return const SizedBox.shrink();
+        }
 
         return Padding(
           padding: const EdgeInsets.only(bottom: 12),

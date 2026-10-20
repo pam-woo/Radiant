@@ -4,10 +4,11 @@ import 'package:flutter/services.dart';
 import '../../data/models.dart';
 import '../../data/radiant_repository.dart';
 import '../../state/app_state.dart';
-import '../../widgets/placeholder_page.dart';
+import '../../state/settings_state.dart';
 import '../driver/driver_emergency_banner.dart';
 import '../driver/emergency_alert_screen.dart';
 import '../event_log/event_log_view.dart';
+import '../settings/settings_view.dart';
 
 /// Driver home: Event Log (with the emergency banner) and Settings. A new
 /// emergency vehicle opens the full-screen alert automatically.
@@ -51,7 +52,8 @@ class _DriverShellState extends State<DriverShell> {
     // Forget finished emergencies so a later one alerts again.
     _handled.removeWhere((id) => !ids.contains(id));
 
-    if (_alertOpen || widget.repo.offline) return;
+    final settings = SettingsScope.read(context);
+    if (_alertOpen || widget.repo.offline || !settings.alertsEnabled) return;
     for (final alert in active) {
       if (_handled.add(alert.intersectionId)) {
         _openAlert(alert);
@@ -74,9 +76,10 @@ class _DriverShellState extends State<DriverShell> {
   /// Basic haptic feedback. Proper alert sound and vibration come with the
   /// notification setup.
   Future<void> _buzz() async {
+    final settings = SettingsScope.read(context);
     for (var i = 0; i < 3; i++) {
-      await HapticFeedback.heavyImpact();
-      await SystemSound.play(SystemSoundType.click);
+      if (settings.vibrationEnabled) await HapticFeedback.heavyImpact();
+      if (settings.soundEnabled) await SystemSound.play(SystemSoundType.click);
       await Future<void>.delayed(const Duration(milliseconds: 250));
     }
   }
@@ -88,7 +91,8 @@ class _DriverShellState extends State<DriverShell> {
         repo: widget.repo,
         banner: DriverEmergencyBanner(repo: widget.repo),
       ),
-      SettingsPlaceholder(
+      SettingsView(
+        driver: true,
         actionLabel: 'Switch user type',
         onAction: widget.appState.clearRole,
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/models.dart';
 import '../../data/radiant_repository.dart';
+import '../../state/settings_state.dart';
 import '../../theme.dart';
 import '../../widgets/offline_banner.dart';
 import '../../widgets/status_chip.dart';
@@ -37,7 +38,8 @@ class MonitorScreen extends StatelessWidget {
             if (frame == null)
               const _Waiting()
             else ...[
-              if (frame.mode == 'emergency') ...[
+              if (frame.mode == 'emergency' &&
+                  SettingsScope.of(context).alertsEnabled) ...[
                 _EmergencyBanner(frame: frame),
                 const SizedBox(height: 12),
               ],
@@ -163,7 +165,10 @@ class _CameraCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          IntersectionView(frame: frame),
+          IntersectionView(
+            frame: frame,
+            colorBlindSafe: SettingsScope.of(context).colorBlindSafe,
+          ),
           if (frame.mode == 'idle') ...[
             const SizedBox(height: 8),
             const Center(
@@ -216,7 +221,9 @@ class _LaneGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget card(String lane) => Expanded(
-          child: _LaneCard(name: lane, info: frame.lane(lane)),
+          child: MergeSemantics(
+            child: _LaneCard(name: lane, info: frame.lane(lane)),
+          ),
         );
 
     return Column(
@@ -238,9 +245,10 @@ class _LaneCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lane = info;
+    final safe = SettingsScope.of(context).colorBlindSafe;
     final chip = lane == null
         ? const ChipStyle('--', RadiantColors.disabled, Colors.white)
-        : signalChip(lane.signal, lane.secondsRemaining);
+        : signalChip(lane.signal, lane.secondsRemaining, safe: safe);
     final count = lane?.vehicleCount ?? 0;
 
     return Container(

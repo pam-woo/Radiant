@@ -14,7 +14,7 @@ class RadiantColors {
   static const disabled = Color(0xFF3A3A3E);
 }
 
-ThemeData buildRadiantTheme() {
+ThemeData buildRadiantTheme({bool highContrast = false}) {
   final scheme = ColorScheme.fromSeed(
     seedColor: RadiantColors.maroon,
     brightness: Brightness.dark,
@@ -27,7 +27,8 @@ ThemeData buildRadiantTheme() {
   return ThemeData(
     useMaterial3: true,
     colorScheme: scheme,
-    scaffoldBackgroundColor: RadiantColors.background,
+    scaffoldBackgroundColor:
+        highContrast ? Colors.black : RadiantColors.background,
     appBarTheme: const AppBarTheme(
       backgroundColor: RadiantColors.maroon,
       foregroundColor: Colors.white,
@@ -40,7 +41,7 @@ ThemeData buildRadiantTheme() {
       ),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: const Color(0xFF111113),
+      backgroundColor: highContrast ? Colors.black : const Color(0xFF111113),
       indicatorColor: Colors.transparent,
       labelTextStyle: WidgetStateProperty.resolveWith(
         (states) => TextStyle(

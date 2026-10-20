@@ -81,7 +81,8 @@ class _EventLogViewState extends State<EventLogView> {
             if (events.isEmpty)
               const _EmptyEvents()
             else
-              for (final e in events) _EventTile(event: e),
+              for (final e in events)
+                MergeSemantics(child: _EventTile(event: e)),
           ],
         );
       },

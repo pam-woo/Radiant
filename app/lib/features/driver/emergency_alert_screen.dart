@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/models.dart';
 import '../../data/radiant_repository.dart';
+import '../../state/settings_state.dart';
 import '../../theme.dart';
 import '../../widgets/status_chip.dart';
 import 'emergency_mini_map.dart';
@@ -29,6 +30,7 @@ class EmergencyAlertScreen extends StatelessWidget {
         final live = repo.emergencyFor(initial.intersectionId);
         final active = live != null;
         final alert = live ?? initial;
+        final settings = SettingsScope.of(context);
 
         return Scaffold(
           body: Column(
@@ -126,19 +128,21 @@ class EmergencyAlertScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      const Wrap(
+                      Wrap(
                         spacing: 8,
                         children: [
                           StatusChip(
                             ChipStyle(
-                              'Sound on',
+                              settings.soundEnabled ? 'Sound on' : 'Sound off',
                               RadiantColors.disabled,
                               Colors.white,
                             ),
                           ),
                           StatusChip(
                             ChipStyle(
-                              'Vibration on',
+                              settings.vibrationEnabled
+                                  ? 'Vibration on'
+                                  : 'Vibration off',
                               RadiantColors.disabled,
                               Colors.white,
                             ),

@@ -4,11 +4,11 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../data/radiant_repository.dart';
 import '../../state/app_state.dart';
 import '../../theme.dart';
-import '../../widgets/placeholder_page.dart';
 import '../../widgets/status_chip.dart';
 import '../event_log/event_log_view.dart';
 import '../monitor/intersection_picker.dart';
 import '../monitor/monitor_screen.dart';
+import '../settings/settings_view.dart';
 
 /// Admin home: Monitor, Event Log and Settings tabs.
 class AdminShell extends StatefulWidget {
@@ -61,7 +61,7 @@ class _AdminShellState extends State<AdminShell> {
           _index = 0;
         }),
       ),
-      SettingsPlaceholder(actionLabel: 'Sign out', onAction: _signOut),
+      SettingsView(driver: false, actionLabel: 'Sign out', onAction: _signOut),
     ];
 
     return Scaffold(

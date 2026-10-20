@@ -7,7 +7,9 @@ Flutter Android app for Radiant.
   "no connection" states.
 - Step 5: driver Event Log, the emergency banner, and the full-screen alert that
   opens automatically when an emergency vehicle approaches.
-- Settings (step 6) is still a placeholder.
+- Step 6: Settings and accessibility, saved on the device: emergency alerts,
+  alert sound and vibration (driver), high-contrast mode, text size, and
+  color-blind-safe signals (icons and shapes), plus screen reader labels.
 
 The Monitor needs the simulator running: `dart run bin/run.dart` in `simulator`.
 

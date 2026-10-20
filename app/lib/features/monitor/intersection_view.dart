@@ -1,23 +1,43 @@
 import 'package:flutter/material.dart';
 
 import '../../data/models.dart';
+import '../../widgets/status_chip.dart';
 
 /// Top-down drawing of the intersection: roads, junction box, signal dots
 /// and the queued vehicles in each lane.
 class IntersectionView extends StatelessWidget {
-  const IntersectionView({super.key, required this.frame});
+  const IntersectionView({
+    super.key,
+    required this.frame,
+    this.colorBlindSafe = false,
+  });
 
   final LiveFrame frame;
 
+  /// Draw the signal dots as different shapes, not just different colors.
+  final bool colorBlindSafe;
+
+  String get _description {
+    final lanes = frame.lanes.map((l) {
+      final signal = signalChip(l.signal, null).label.toLowerCase();
+      return '${capitalize(l.lane)} lane, ${l.vehicleCount} vehicles, $signal';
+    }).join('. ');
+    return 'Top-down view of ${frame.name}. $lanes.';
+  }
+
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.2,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: CustomPaint(
-          painter: _IntersectionPainter(frame),
-          size: Size.infinite,
+    return Semantics(
+      image: true,
+      label: _description,
+      child: AspectRatio(
+        aspectRatio: 1.2,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: CustomPaint(
+            painter: _IntersectionPainter(frame, colorBlindSafe),
+            size: Size.infinite,
+          ),
         ),
       ),
     );
@@ -25,9 +45,10 @@ class IntersectionView extends StatelessWidget {
 }
 
 class _IntersectionPainter extends CustomPainter {
-  _IntersectionPainter(this.frame);
+  _IntersectionPainter(this.frame, this.safe);
 
   final LiveFrame frame;
+  final bool safe;
 
   static const _carLength = 14.0;
   static const _carWidth = 8.0;
@@ -121,7 +142,38 @@ class _IntersectionPainter extends CustomPainter {
       'flashYellow' => const Color(0xFFFFC400),
       _ => const Color(0xFFEF4444),
     };
-    canvas.drawCircle(at, 4.5, Paint()..color = color);
+    final paint = Paint()..color = color;
+    if (!safe) {
+      canvas.drawCircle(at, 4.5, paint);
+      return;
+    }
+
+    // Color-blind-safe: a different shape for each state.
+    switch (signal) {
+      case 'go':
+        canvas.drawCircle(at, 5, paint);
+      case 'yellow':
+        canvas.drawPath(
+          Path()
+            ..moveTo(at.dx, at.dy - 6)
+            ..lineTo(at.dx + 6, at.dy + 5)
+            ..lineTo(at.dx - 6, at.dy + 5)
+            ..close(),
+          paint,
+        );
+      case 'flashYellow':
+        canvas.drawPath(
+          Path()
+            ..moveTo(at.dx, at.dy - 6)
+            ..lineTo(at.dx + 6, at.dy)
+            ..lineTo(at.dx, at.dy + 6)
+            ..lineTo(at.dx - 6, at.dy)
+            ..close(),
+          paint,
+        );
+      default:
+        canvas.drawRect(Rect.fromCenter(center: at, width: 9, height: 9), paint);
+    }
   }
 
   void _queue(
@@ -196,5 +248,5 @@ class _IntersectionPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _IntersectionPainter oldDelegate) =>
-      oldDelegate.frame != frame;
+      oldDelegate.frame != frame || oldDelegate.safe != safe;
 }

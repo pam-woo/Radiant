@@ -23,11 +23,14 @@ String thousands(int n) {
 String intersectionName(int id) => 'Intersection ${two(id)}';
 
 class ChipStyle {
-  const ChipStyle(this.label, this.background, this.foreground);
+  const ChipStyle(this.label, this.background, this.foreground, [this.icon]);
 
   final String label;
   final Color background;
   final Color foreground;
+
+  /// Shown before the label (color-blind-safe signals).
+  final IconData? icon;
 }
 
 /// Short mode chip (summary cards).
@@ -72,19 +75,38 @@ ChipStyle cameraChip(String mode, {required bool offline}) {
   }
 }
 
-/// Signal chip on a lane card.
-ChipStyle signalChip(String signal, int? seconds) {
+/// Signal chip on a lane card. With [safe] set, each state also gets its own
+/// icon so it can be told apart without relying on color.
+ChipStyle signalChip(String signal, int? seconds, {bool safe = false}) {
   switch (signal) {
     case 'go':
-      return ChipStyle(seconds == null ? 'GO' : 'GO ${seconds}s',
-          RadiantColors.green, Colors.black);
+      return ChipStyle(
+        seconds == null ? 'GO' : 'GO ${seconds}s',
+        RadiantColors.green,
+        Colors.black,
+        safe ? Icons.check : null,
+      );
     case 'yellow':
-      return ChipStyle(seconds == null ? 'YELLOW' : 'YELLOW ${seconds}s',
-          RadiantColors.amber, Colors.black);
+      return ChipStyle(
+        seconds == null ? 'YELLOW' : 'YELLOW ${seconds}s',
+        RadiantColors.amber,
+        Colors.black,
+        safe ? Icons.change_history : null,
+      );
     case 'flashYellow':
-      return const ChipStyle('FLASH YELLOW', RadiantColors.yellow, Colors.black);
+      return ChipStyle(
+        'FLASH YELLOW',
+        RadiantColors.yellow,
+        Colors.black,
+        safe ? Icons.warning_amber : null,
+      );
     default:
-      return const ChipStyle('STOP', RadiantColors.red, Colors.white);
+      return ChipStyle(
+        'STOP',
+        RadiantColors.red,
+        Colors.white,
+        safe ? Icons.stop : null,
+      );
   }
 }
 
@@ -121,13 +143,22 @@ class StatusChip extends StatelessWidget {
         color: style.background,
         borderRadius: BorderRadius.circular(6),
       ),
-      child: Text(
-        style.label,
-        style: TextStyle(
-          fontSize: compact ? 9 : 10,
-          fontWeight: FontWeight.w800,
-          color: style.foreground,
-        ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (style.icon != null) ...[
+            Icon(style.icon, size: compact ? 10 : 12, color: style.foreground),
+            const SizedBox(width: 3),
+          ],
+          Text(
+            style.label,
+            style: TextStyle(
+              fontSize: compact ? 9 : 10,
+              fontWeight: FontWeight.w800,
+              color: style.foreground,
+            ),
+          ),
+        ],
       ),
     );
   }

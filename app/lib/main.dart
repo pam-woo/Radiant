@@ -6,6 +6,7 @@ import 'app.dart';
 import 'config.dart';
 import 'data/radiant_repository.dart';
 import 'state/app_state.dart';
+import 'state/settings_state.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,5 +23,6 @@ Future<void> main() async {
   final prefs = await SharedPreferences.getInstance();
   final appState = await AppState.load();
   final repo = RadiantRepository(Supabase.instance.client, prefs);
-  runApp(RadiantApp(appState: appState, repo: repo));
+  final settings = SettingsState.fromPrefs(prefs);
+  runApp(RadiantApp(appState: appState, repo: repo, settings: settings));
 }
