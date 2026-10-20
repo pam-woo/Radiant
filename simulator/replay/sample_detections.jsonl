@@ -1,0 +1,180 @@
+{"t": 0, "counts": {"north": 3, "south": 4, "east": 7, "west": 3}, "emergency": null}
+{"t": 1, "counts": {"north": 3, "south": 4, "east": 7, "west": 3}, "emergency": null}
+{"t": 2, "counts": {"north": 3, "south": 4, "east": 7, "west": 3}, "emergency": null}
+{"t": 3, "counts": {"north": 3, "south": 4, "east": 6, "west": 3}, "emergency": null}
+{"t": 4, "counts": {"north": 4, "south": 4, "east": 6, "west": 3}, "emergency": null}
+{"t": 5, "counts": {"north": 4, "south": 4, "east": 6, "west": 3}, "emergency": null}
+{"t": 6, "counts": {"north": 4, "south": 4, "east": 6, "west": 2}, "emergency": null}
+{"t": 7, "counts": {"north": 4, "south": 4, "east": 6, "west": 2}, "emergency": null}
+{"t": 8, "counts": {"north": 4, "south": 4, "east": 6, "west": 2}, "emergency": null}
+{"t": 9, "counts": {"north": 4, "south": 4, "east": 6, "west": 2}, "emergency": null}
+{"t": 10, "counts": {"north": 4, "south": 4, "east": 6, "west": 2}, "emergency": null}
+{"t": 11, "counts": {"north": 4, "south": 4, "east": 5, "west": 2}, "emergency": null}
+{"t": 12, "counts": {"north": 5, "south": 4, "east": 5, "west": 2}, "emergency": null}
+{"t": 13, "counts": {"north": 5, "south": 4, "east": 5, "west": 1}, "emergency": null}
+{"t": 14, "counts": {"north": 5, "south": 4, "east": 5, "west": 1}, "emergency": null}
+{"t": 15, "counts": {"north": 5, "south": 3, "east": 5, "west": 1}, "emergency": null}
+{"t": 16, "counts": {"north": 5, "south": 3, "east": 5, "west": 1}, "emergency": null}
+{"t": 17, "counts": {"north": 5, "south": 3, "east": 4, "west": 1}, "emergency": null}
+{"t": 18, "counts": {"north": 5, "south": 3, "east": 4, "west": 1}, "emergency": null}
+{"t": 19, "counts": {"north": 5, "south": 3, "east": 4, "west": 1}, "emergency": null}
+{"t": 20, "counts": {"north": 5, "south": 3, "east": 4, "west": 1}, "emergency": null}
+{"t": 21, "counts": {"north": 5, "south": 2, "east": 4, "west": 1}, "emergency": null}
+{"t": 22, "counts": {"north": 5, "south": 2, "east": 4, "west": 1}, "emergency": null}
+{"t": 23, "counts": {"north": 5, "south": 2, "east": 3, "west": 1}, "emergency": null}
+{"t": 24, "counts": {"north": 5, "south": 2, "east": 3, "west": 1}, "emergency": null}
+{"t": 25, "counts": {"north": 5, "south": 2, "east": 3, "west": 1}, "emergency": null}
+{"t": 26, "counts": {"north": 5, "south": 2, "east": 3, "west": 1}, "emergency": null}
+{"t": 27, "counts": {"north": 5, "south": 1, "east": 3, "west": 1}, "emergency": null}
+{"t": 28, "counts": {"north": 5, "south": 1, "east": 3, "west": 1}, "emergency": null}
+{"t": 29, "counts": {"north": 5, "south": 1, "east": 2, "west": 1}, "emergency": null}
+{"t": 30, "counts": {"north": 5, "south": 1, "east": 2, "west": 1}, "emergency": null}
+{"t": 31, "counts": {"north": 5, "south": 1, "east": 2, "west": 1}, "emergency": null}
+{"t": 32, "counts": {"north": 5, "south": 1, "east": 2, "west": 2}, "emergency": null}
+{"t": 33, "counts": {"north": 4, "south": 0, "east": 2, "west": 2}, "emergency": null}
+{"t": 34, "counts": {"north": 4, "south": 0, "east": 2, "west": 2}, "emergency": null}
+{"t": 35, "counts": {"north": 4, "south": 0, "east": 2, "west": 2}, "emergency": null}
+{"t": 36, "counts": {"north": 4, "south": 0, "east": 2, "west": 2}, "emergency": null}
+{"t": 37, "counts": {"north": 4, "south": 0, "east": 1, "west": 2}, "emergency": null}
+{"t": 38, "counts": {"north": 4, "south": 0, "east": 1, "west": 2}, "emergency": null}
+{"t": 39, "counts": {"north": 4, "south": 0, "east": 1, "west": 2}, "emergency": null}
+{"t": 40, "counts": {"north": 4, "south": 0, "east": 1, "west": 3}, "emergency": null}
+{"t": 41, "counts": {"north": 3, "south": 0, "east": 1, "west": 3}, "emergency": null}
+{"t": 42, "counts": {"north": 3, "south": 0, "east": 1, "west": 3}, "emergency": null}
+{"t": 43, "counts": {"north": 3, "south": 0, "east": 1, "west": 3}, "emergency": null}
+{"t": 44, "counts": {"north": 3, "south": 0, "east": 1, "west": 3}, "emergency": null}
+{"t": 45, "counts": {"north": 3, "south": 0, "east": 1, "west": 3}, "emergency": null}
+{"t": 46, "counts": {"north": 3, "south": 0, "east": 1, "west": 4}, "emergency": null}
+{"t": 47, "counts": {"north": 3, "south": 0, "east": 1, "west": 4}, "emergency": null}
+{"t": 48, "counts": {"north": 2, "south": 0, "east": 1, "west": 4}, "emergency": null}
+{"t": 49, "counts": {"north": 2, "south": 1, "east": 1, "west": 4}, "emergency": null}
+{"t": 50, "counts": {"north": 2, "south": 1, "east": 1, "west": 4}, "emergency": null}
+{"t": 51, "counts": {"north": 2, "south": 1, "east": 1, "west": 4}, "emergency": null}
+{"t": 52, "counts": {"north": 2, "south": 1, "east": 1, "west": 4}, "emergency": null}
+{"t": 53, "counts": {"north": 2, "south": 1, "east": 1, "west": 4}, "emergency": null}
+{"t": 54, "counts": {"north": 2, "south": 1, "east": 1, "west": 5}, "emergency": null}
+{"t": 55, "counts": {"north": 2, "south": 1, "east": 1, "west": 5}, "emergency": null}
+{"t": 56, "counts": {"north": 1, "south": 2, "east": 1, "west": 5}, "emergency": null}
+{"t": 57, "counts": {"north": 1, "south": 2, "east": 2, "west": 5}, "emergency": null}
+{"t": 58, "counts": {"north": 1, "south": 2, "east": 2, "west": 5}, "emergency": null}
+{"t": 59, "counts": {"north": 1, "south": 2, "east": 2, "west": 5}, "emergency": null}
+{"t": 60, "counts": {"north": 1, "south": 2, "east": 2, "west": 5}, "emergency": null}
+{"t": 61, "counts": {"north": 1, "south": 3, "east": 2, "west": 5}, "emergency": null}
+{"t": 62, "counts": {"north": 1, "south": 3, "east": 2, "west": 5}, "emergency": null}
+{"t": 63, "counts": {"north": 1, "south": 3, "east": 2, "west": 5}, "emergency": null}
+{"t": 64, "counts": {"north": 1, "south": 3, "east": 3, "west": 5}, "emergency": null}
+{"t": 65, "counts": {"north": 1, "south": 3, "east": 3, "west": 5}, "emergency": null}
+{"t": 66, "counts": {"north": 1, "south": 3, "east": 3, "west": 5}, "emergency": null}
+{"t": 67, "counts": {"north": 1, "south": 3, "east": 3, "west": 5}, "emergency": null}
+{"t": 68, "counts": {"north": 1, "south": 4, "east": 3, "west": 5}, "emergency": null}
+{"t": 69, "counts": {"north": 1, "south": 4, "east": 3, "west": 5}, "emergency": null}
+{"t": 70, "counts": {"north": 1, "south": 4, "east": 4, "west": 6}, "emergency": null}
+{"t": 71, "counts": {"north": 1, "south": 4, "east": 4, "west": 6}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 72, "counts": {"north": 1, "south": 4, "east": 4, "west": 6}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 73, "counts": {"north": 1, "south": 4, "east": 4, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 74, "counts": {"north": 1, "south": 4, "east": 4, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 75, "counts": {"north": 1, "south": 4, "east": 4, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 76, "counts": {"north": 1, "south": 4, "east": 5, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 77, "counts": {"north": 2, "south": 4, "east": 5, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 78, "counts": {"north": 2, "south": 4, "east": 5, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 79, "counts": {"north": 2, "south": 4, "east": 5, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 80, "counts": {"north": 2, "south": 4, "east": 5, "west": 5}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 81, "counts": {"north": 2, "south": 4, "east": 5, "west": 4}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 82, "counts": {"north": 2, "south": 4, "east": 6, "west": 4}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 83, "counts": {"north": 2, "south": 4, "east": 6, "west": 4}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 84, "counts": {"north": 2, "south": 3, "east": 6, "west": 4}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 85, "counts": {"north": 3, "south": 3, "east": 6, "west": 4}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 86, "counts": {"north": 3, "south": 3, "east": 6, "west": 4}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 87, "counts": {"north": 3, "south": 3, "east": 6, "west": 3}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 88, "counts": {"north": 3, "south": 3, "east": 6, "west": 3}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 89, "counts": {"north": 3, "south": 3, "east": 6, "west": 3}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 90, "counts": {"north": 3, "south": 2, "east": 7, "west": 2}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 91, "counts": {"north": 3, "south": 2, "east": 7, "west": 2}, "emergency": {"lane": "west", "type": "ambulance", "confidence": 0.94}}
+{"t": 92, "counts": {"north": 4, "south": 2, "east": 7, "west": 2}, "emergency": null}
+{"t": 93, "counts": {"north": 4, "south": 2, "east": 7, "west": 2}, "emergency": null}
+{"t": 94, "counts": {"north": 4, "south": 2, "east": 7, "west": 2}, "emergency": null}
+{"t": 95, "counts": {"north": 4, "south": 2, "east": 7, "west": 1}, "emergency": null}
+{"t": 96, "counts": {"north": 4, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 97, "counts": {"north": 4, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 98, "counts": {"north": 4, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 99, "counts": {"north": 4, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 100, "counts": {"north": 5, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 101, "counts": {"north": 5, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 102, "counts": {"north": 5, "south": 1, "east": 7, "west": 1}, "emergency": null}
+{"t": 103, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 104, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 105, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 106, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 107, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 108, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 109, "counts": {"north": 5, "south": 0, "east": 7, "west": 1}, "emergency": null}
+{"t": 110, "counts": {"north": 5, "south": 0, "east": 6, "west": 1}, "emergency": null}
+{"t": 111, "counts": {"north": 5, "south": 0, "east": 6, "west": 1}, "emergency": null}
+{"t": 112, "counts": {"north": 5, "south": 0, "east": 6, "west": 1}, "emergency": null}
+{"t": 113, "counts": {"north": 5, "south": 0, "east": 6, "west": 1}, "emergency": null}
+{"t": 114, "counts": {"north": 5, "south": 0, "east": 6, "west": 2}, "emergency": null}
+{"t": 115, "counts": {"north": 5, "south": 0, "east": 6, "west": 2}, "emergency": null}
+{"t": 116, "counts": {"north": 5, "south": 0, "east": 6, "west": 2}, "emergency": null}
+{"t": 117, "counts": {"north": 5, "south": 0, "east": 6, "west": 2}, "emergency": null}
+{"t": 118, "counts": {"north": 5, "south": 1, "east": 5, "west": 2}, "emergency": null}
+{"t": 119, "counts": {"north": 5, "south": 1, "east": 5, "west": 2}, "emergency": null}
+{"t": 120, "counts": {"north": 5, "south": 1, "east": 5, "west": 2}, "emergency": null}
+{"t": 121, "counts": {"north": 4, "south": 1, "east": 5, "west": 2}, "emergency": null}
+{"t": 122, "counts": {"north": 4, "south": 1, "east": 5, "west": 3}, "emergency": null}
+{"t": 123, "counts": {"north": 4, "south": 1, "east": 5, "west": 3}, "emergency": null}
+{"t": 124, "counts": {"north": 4, "south": 1, "east": 4, "west": 3}, "emergency": null}
+{"t": 125, "counts": {"north": 4, "south": 2, "east": 4, "west": 3}, "emergency": null}
+{"t": 126, "counts": {"north": 4, "south": 2, "east": 4, "west": 3}, "emergency": null}
+{"t": 127, "counts": {"north": 4, "south": 2, "east": 4, "west": 3}, "emergency": null}
+{"t": 128, "counts": {"north": 4, "south": 2, "east": 4, "west": 4}, "emergency": null}
+{"t": 129, "counts": {"north": 3, "south": 2, "east": 4, "west": 4}, "emergency": null}
+{"t": 130, "counts": {"north": 3, "south": 2, "east": 3, "west": 4}, "emergency": null}
+{"t": 131, "counts": {"north": 3, "south": 3, "east": 3, "west": 4}, "emergency": null}
+{"t": 132, "counts": {"north": 3, "south": 3, "east": 3, "west": 4}, "emergency": null}
+{"t": 133, "counts": {"north": 3, "south": 3, "east": 3, "west": 4}, "emergency": null}
+{"t": 134, "counts": {"north": 3, "south": 3, "east": 3, "west": 4}, "emergency": null}
+{"t": 135, "counts": {"north": 3, "south": 3, "east": 3, "west": 4}, "emergency": null}
+{"t": 136, "counts": {"north": 2, "south": 3, "east": 2, "west": 5}, "emergency": null}
+{"t": 137, "counts": {"north": 2, "south": 4, "east": 2, "west": 5}, "emergency": null}
+{"t": 138, "counts": {"north": 2, "south": 4, "east": 2, "west": 5}, "emergency": null}
+{"t": 139, "counts": {"north": 2, "south": 4, "east": 2, "west": 5}, "emergency": null}
+{"t": 140, "counts": {"north": 2, "south": 4, "east": 2, "west": 5}, "emergency": null}
+{"t": 141, "counts": {"north": 2, "south": 4, "east": 2, "west": 5}, "emergency": null}
+{"t": 142, "counts": {"north": 2, "south": 4, "east": 2, "west": 5}, "emergency": null}
+{"t": 143, "counts": {"north": 2, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 144, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 145, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 146, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 147, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 148, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 149, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 150, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 151, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 152, "counts": {"north": 1, "south": 4, "east": 1, "west": 5}, "emergency": null}
+{"t": 153, "counts": {"north": 1, "south": 3, "east": 1, "west": 5}, "emergency": null}
+{"t": 154, "counts": {"north": 1, "south": 3, "east": 1, "west": 5}, "emergency": null}
+{"t": 155, "counts": {"north": 1, "south": 3, "east": 1, "west": 4}, "emergency": null}
+{"t": 156, "counts": {"north": 1, "south": 3, "east": 1, "west": 4}, "emergency": null}
+{"t": 157, "counts": {"north": 1, "south": 3, "east": 1, "west": 4}, "emergency": null}
+{"t": 158, "counts": {"north": 1, "south": 3, "east": 1, "west": 4}, "emergency": null}
+{"t": 159, "counts": {"north": 1, "south": 3, "east": 1, "west": 4}, "emergency": null}
+{"t": 160, "counts": {"north": 1, "south": 2, "east": 1, "west": 4}, "emergency": null}
+{"t": 161, "counts": {"north": 1, "south": 2, "east": 1, "west": 4}, "emergency": null}
+{"t": 162, "counts": {"north": 1, "south": 2, "east": 1, "west": 3}, "emergency": null}
+{"t": 163, "counts": {"north": 1, "south": 2, "east": 2, "west": 3}, "emergency": null}
+{"t": 164, "counts": {"north": 1, "south": 2, "east": 2, "west": 3}, "emergency": null}
+{"t": 165, "counts": {"north": 2, "south": 1, "east": 2, "west": 3}, "emergency": null}
+{"t": 166, "counts": {"north": 2, "south": 1, "east": 2, "west": 3}, "emergency": null}
+{"t": 167, "counts": {"north": 2, "south": 1, "east": 2, "west": 3}, "emergency": null}
+{"t": 168, "counts": {"north": 2, "south": 1, "east": 2, "west": 3}, "emergency": null}
+{"t": 169, "counts": {"north": 2, "south": 1, "east": 2, "west": 2}, "emergency": null}
+{"t": 170, "counts": {"north": 2, "south": 1, "east": 2, "west": 2}, "emergency": null}
+{"t": 171, "counts": {"north": 2, "south": 1, "east": 3, "west": 2}, "emergency": null}
+{"t": 172, "counts": {"north": 2, "south": 0, "east": 3, "west": 2}, "emergency": null}
+{"t": 173, "counts": {"north": 3, "south": 0, "east": 3, "west": 2}, "emergency": null}
+{"t": 174, "counts": {"north": 3, "south": 0, "east": 3, "west": 2}, "emergency": null}
+{"t": 175, "counts": {"north": 3, "south": 0, "east": 3, "west": 2}, "emergency": null}
+{"t": 176, "counts": {"north": 3, "south": 0, "east": 3, "west": 2}, "emergency": null}
+{"t": 177, "counts": {"north": 3, "south": 0, "east": 4, "west": 1}, "emergency": null}
+{"t": 178, "counts": {"north": 3, "south": 0, "east": 4, "west": 1}, "emergency": null}
+{"t": 179, "counts": {"north": 3, "south": 0, "east": 4, "west": 1}, "emergency": null}

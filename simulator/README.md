@@ -20,6 +20,7 @@ dart run bin/run.dart --seconds 120   # two minutes
 dart run bin/run.dart --seed 7        # different random traffic
 dart run bin/run.dart --warmup 0      # skip the 90 s silent warm-up
 dart run bin/run.dart --emergency-boost 10   # ten times as many emergency vehicles
+dart run bin/run.dart --replay replay/sample_detections.jsonl --replay-intersection 1   # drive Intersection 1 from detections
 ```
 
 It first simulates 90 seconds silently so the roads are already busy when

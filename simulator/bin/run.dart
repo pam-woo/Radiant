@@ -14,6 +14,7 @@ import 'package:radiant_simulator/supabase_rest.dart';
 ///   dart run bin/run.dart --seed 7        different random traffic
 ///   dart run bin/run.dart --warmup 0      skip the 90 s silent warm-up
 ///   dart run bin/run.dart --emergency-boost 10   many more emergency vehicles (demos)
+///   dart run bin/run.dart --replay replay/sample_detections.jsonl --replay-intersection 1
 ///
 /// Each start wipes old events and active emergencies so the demo starts clean.
 Future<void> main(List<String> args) async {
@@ -32,9 +33,44 @@ Future<void> main(List<String> args) async {
   final boost = _doubleArg(args, '--emergency-boost', 1.0);
 
   final db = SupabaseRest(url: url, key: key);
+  // Optional: drive one intersection from recorded detector output.
+  List<IntersectionSource>? sources;
+  final replayPath = _stringArg(args, '--replay');
+  if (replayPath != null) {
+    final replayId = _intArg(args, '--replay-intersection', 1);
+    final file = File(replayPath);
+    if (!file.existsSync()) {
+      stderr.writeln('Replay file not found: $replayPath');
+      exit(64);
+    }
+    final frames = ReplayFrame.parseJsonLines(file.readAsStringSync());
+    if (frames.isEmpty) {
+      stderr.writeln('The replay file has no frames: $replayPath');
+      exit(64);
+    }
+    sources = <IntersectionSource>[
+      ...TrafficSimulator.defaultIntersections(seed, emergencyBoost: boost),
+    ];
+    final index = sources.indexWhere((s) => s.id == replayId);
+    if (index == -1) {
+      stderr.writeln('There is no intersection $replayId to replay onto.');
+      exit(64);
+    }
+    sources[index] = ReplayIntersection(
+      id: replayId,
+      name: sources[index].name,
+      frames: frames,
+    );
+    stdout.writeln(
+      'Intersection $replayId replays ${frames.length} s of detections '
+      'from $replayPath.',
+    );
+  }
+
   final sim = TrafficSimulator(
     seed: seed,
     emergencyBoost: boost,
+    intersections: sources,
     start: DateTime.now().toUtc().subtract(Duration(seconds: warmup + 1)),
   );
 
@@ -151,6 +187,12 @@ double _doubleArg(List<String> args, String name, double fallback) {
   final i = args.indexOf(name);
   if (i == -1 || i + 1 >= args.length) return fallback;
   return double.tryParse(args[i + 1]) ?? fallback;
+}
+
+String? _stringArg(List<String> args, String name) {
+  final i = args.indexOf(name);
+  if (i == -1 || i + 1 >= args.length) return null;
+  return args[i + 1];
 }
 
 int _intArg(List<String> args, String name, int fallback) {
