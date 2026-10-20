@@ -189,8 +189,10 @@ class TrafficSimulator {
     DateTime? start,
     List<IntersectionSimulator>? intersections,
     this.maxEvents = 500,
+    double emergencyBoost = 1.0,
   })  : _time = start ?? DateTime.utc(2026, 10, 19, 8),
-        intersections = intersections ?? defaultIntersections(seed);
+        intersections = intersections ??
+            defaultIntersections(seed, emergencyBoost: emergencyBoost);
 
   final List<IntersectionSimulator> intersections;
   final int maxEvents;
@@ -221,7 +223,12 @@ class TrafficSimulator {
   /// Intersections 01 to 05 as in the design:
   /// 01 busy east-west, 02 busy north-south, 03 balanced with the most
   /// emergencies, 04 an empty road, 05 normal traffic with pedestrians.
-  static List<IntersectionSimulator> defaultIntersections(int seed) {
+  ///
+  /// [emergencyBoost] multiplies the emergency vehicle rate, handy for demos.
+  static List<IntersectionSimulator> defaultIntersections(
+    int seed, {
+    double emergencyBoost = 1.0,
+  }) {
     IntersectionProfile profile(
       double n,
       double s,
@@ -238,7 +245,7 @@ class TrafficSimulator {
             Lane.west: w,
           },
           pedestriansPerSecond: pedestrians,
-          emergenciesPerHour: emergencies,
+          emergenciesPerHour: emergencies * emergencyBoost,
         );
 
     final profiles = [

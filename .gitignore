@@ -8,3 +8,5 @@ build/
 .env.*
 !.env.example
 pubspec.lock
+
+env.json

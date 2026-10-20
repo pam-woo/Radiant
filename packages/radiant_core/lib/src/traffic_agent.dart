@@ -373,7 +373,7 @@ class TrafficAgent {
     if (o > g) {
       return '${other.label} is busier ($o vs $g vehicles), so it goes next.';
     }
-    return 'Both directions are equally busy ($g vehicles each).';
+    return 'Both directions are equally busy ($g ${g == 1 ? 'vehicle' : 'vehicles'} each).';
   }
 
   String _actText(IntersectionMode mode) {

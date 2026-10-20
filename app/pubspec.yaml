@@ -1,0 +1,22 @@
+name: radiant_app
+description: Radiant, adaptive traffic signal monitor and emergency alerts.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.8.0
+  shared_preferences: ^2.3.0
+  permission_handler: ^12.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ">=5.0.0"
+
+flutter:
+  uses-material-design: true
